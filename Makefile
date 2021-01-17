@@ -7,6 +7,7 @@ include config.mk
 SRC = st.c x.c
 OBJ = $(SRC:.c=.o)
 
+BINARY_ALIAS=	tic=true
 all: options st
 
 options:

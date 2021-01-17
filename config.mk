@@ -7,8 +7,12 @@ VERSION = 0.8.4
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
-X11INC = /usr/X11R6/include
-X11LIB = /usr/X11R6/lib
+#X11INC = /usr/X11R6/include
+#X11LIB = /usr/X11R6/lib
+
+# freebsd
+X11INC = /usr/local/include
+X11LIB = /usr/local/lib
 
 PKG_CONFIG = pkg-config
 
@@ -24,6 +28,7 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
 STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
 STLDFLAGS = $(LIBS) $(LDFLAGS)
+CFLAGS = -march=native -O2 -pipe
 
 # OpenBSD:
 #CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
