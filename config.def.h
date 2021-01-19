@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "JetBrainsMono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*
@@ -41,7 +41,7 @@ static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
 /* alt screens */
-int allowaltscreen = 1;
+int allowaltscreen = 0;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
@@ -97,30 +97,30 @@ unsigned int tabspaces = 8;
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"#202020",
-	"#a04040",
-	"#40a040",
-	"#a0a040",
-	"#2060a0",
-	"#a040a0",
-	"#40a0a0",
-	"#a0a0a0",
+	"#c04040",
+	"#40c040",
+	"#c0c040",
+	"#2060c0",
+	"#c040c0",
+	"#40c0c0",
+	"#c0c0c0",
 
 	/* 8 bright colors */
 	"#000000",
-	"#a02020",
-	"#20a020",
-	"#a0a020",
-	"#5070f0",
-	"#a020a0",
-	"#20a0a0",
-	"#f0f0f0",
+	"#c02020",
+	"#20c020",
+	"#c0c020",
+	"#2020c0",
+	"#c020c0",
+	"#20c0c0",
+	"#ffffff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#dd3333",
-	[257] = "#33dddd",
-	[258] = "#302828",
+	[256] = "#c04040",
+	[257] = "#40c0c0",
+	[258] = "#282828",
 	[259] = "#c0c0c0"
 };
 
