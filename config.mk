@@ -28,7 +28,8 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
 STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
 STLDFLAGS = $(LIBS) $(LDFLAGS)
-CFLAGS = -march=native -O2 -pipe
+CFLAGS = -march=native -O2 -pipe -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fPIE
+LDFLAGS = -Wl,-z,relro,-z,now
 
 # OpenBSD:
 #CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
