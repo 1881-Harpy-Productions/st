@@ -1,6 +1,8 @@
 ## my patches
 boxdraw
 
+## added scroll string so i can use the scroll program for scrolling, duh
+
 st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
