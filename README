@@ -4,6 +4,7 @@ keyboard select
 anysize
 alpha patch
 selection color
+osc 10 12 12 2
 
 # Other changes
 added scroll string so i can use the scroll program for scrolling, duh, st may not work if you dont have the scroll program
