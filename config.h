@@ -147,6 +147,7 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 259;
 unsigned int defaultbg = 258;
+/* previously the variable bellow was static unsigned int. i changed it for a patch, not sure why its needed so i am commenting this just i know what i did if someone goes wrong*/
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 256;
 

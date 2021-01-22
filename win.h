@@ -40,5 +40,6 @@ void xsetpointermotion(int);
 void xsetsel(char *);
 int xstartdraw(void);
 void toggle_winmode(int);
+void xclearwin(void);
 void keyboard_select(const Arg *);
 void xximspot(int, int);
