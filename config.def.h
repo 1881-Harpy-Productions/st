@@ -136,7 +136,8 @@ static const char *colorname[] = {
 	[256] = "#c04040",
 	[257] = "#40c0c0",
 	[258] = "#282828",
-	[259] = "#c0c0c0"
+	[259] = "#c0c0c0",
+	[260] = "#c00000"
 };
 
 
@@ -147,7 +148,14 @@ static const char *colorname[] = {
 unsigned int defaultfg = 259;
 unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultrcs = 256;
+
+/* Colors used for selection */
+unsigned int selectionbg = 260;
+unsigned int selectionfg = 0;
+/* If 0 use selectionfg as foreground in order to have a uniform foreground-color */
+/* Else if 1 keep original foreground-color of each cell => more colors :) */
+static int ignoreselfg = 1;
 
 /*
  * Default shape of cursor
