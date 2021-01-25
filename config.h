@@ -19,7 +19,7 @@ static int borderpx = 0;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = "scroll";
+char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -106,7 +106,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.6;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -114,10 +114,10 @@ static const char *colorname[] = {
 	"#202020",
 	"#c04040",
 	"#40c040",
-	"#c0c040",
-	"#2060c0",
-	"#c040c0",
-	"#40c0c0",
+	"#c0c020",
+	"#4040f0",
+	"#c04040",
+	"#40c040",
 	"#c0c0c0",
 
 	/* 8 bright colors */
@@ -133,11 +133,11 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#c04040",
-	[257] = "#40c0c0",
-	[258] = "#282828",
-	[259] = "#c0c0c0",
-	[260] = "#c00000"
+	[256] = "#a02020",
+	[257] = "#20a0a0",
+	[258] = "#302828",
+	[259] = "#d4d4d4",
+	[260] = "#a00000"
 };
 
 
