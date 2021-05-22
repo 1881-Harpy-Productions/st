@@ -28,7 +28,7 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft -lXrender\
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
 STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
 STLDFLAGS = $(LIBS) $(LDFLAGS)
-CFLAGS = -march=native -O2 -pipe
+CFLAGS = -march=native -mtune=native -O2 -pipe
 #LDFLAGS = -Wl,-z,relro,-z,now
 
 # OpenBSD:
