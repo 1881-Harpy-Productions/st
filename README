@@ -9,6 +9,7 @@ xclearwin
 bold is not bright
 scroll
 
+
 # Other changes
 added scroll string so i can use the scroll program for scrolling, duh, st may not work if you dont have the scroll program
 git clone https://git.suckless.org/scroll
