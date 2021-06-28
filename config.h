@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono:pixelsize=10:antialias=true:autohint=true";
-static int borderpx = 0;
+static char *font = "JetBrainsMono:pixelsize=10:antialias=True:autohint=true";
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -34,18 +34,18 @@ static float chscale = 1.0;
  *
  * More advanced example: L" `'\"()[]{}"
  */
-wchar_t *worddelimiters = L" `'\"(){}[]";
+wchar_t *worddelimiters = L" `'\"(){}[]/";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
 /* alt screens */
-int allowaltscreen = 1;
+int allowaltscreen = 0;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 1;
+int allowwindowops = 0;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -103,7 +103,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* bg opacity */
 float alpha = 0.8;
@@ -111,23 +111,23 @@ float alpha = 0.8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#202020",
-	"#c04040",
-	"#40c040",
-	"#c0c020",
-	"#4040f0",
-	"#c04040",
-	"#40c040",
-	"#c0c0c0",
+	"#1c1c1c",
+	"#e04040",
+	"#40e040",
+	"#e0e020",
+	"#6060ff",
+	"#e04040",
+	"#40e040",
+	"#e0e0e0",
 
 	/* 8 bright colors */
 	"#000000",
-	"#c02020",
-	"#20c020",
-	"#c0c020",
-	"#2020c0",
-	"#c020c0",
-	"#20c0c0",
+	"#f02020",
+	"#20f020",
+	"#f0f020",
+	"#4040ff",
+	"#f020f0",
+	"#20f0f0",
 	"#ffffff",
 
 	[255] = 0,
@@ -135,7 +135,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	[256] = "#a02020",
 	[257] = "#20a0a0",
-	[258] = "#302828",
+	[258] = "#282828",
 	[259] = "#d4d4d4",
 	[260] = "#a00000"
 };
