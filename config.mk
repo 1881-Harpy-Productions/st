@@ -28,14 +28,14 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft -lXrender\
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
 STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
 STLDFLAGS = $(LIBS) $(LDFLAGS)
-CFLAGS = -march=native -mtune=native -O2 -pipe
+CFLAGS = -march=native -mtune=native -Os -pipe
 #LDFLAGS = -Wl,-z,relro,-z,now
 
 # OpenBSD:
-#CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
-#LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
-#       `$(PKG_CONFIG) --libs fontconfig` \
-#       `$(PKG_CONFIG) --libs freetype2`
+CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
+LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
+       `$(PKG_CONFIG) --libs fontconfig` \
+       `$(PKG_CONFIG) --libs freetype2`
 
 # compiler and linker
 CC = clang12
