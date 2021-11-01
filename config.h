@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/local/bin/mksh";
+static char *shell = "/bin/ksh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -41,11 +41,11 @@ static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
 /* alt screens */
-int allowaltscreen = 0;
+int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 0;
+int allowwindowops = 1;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -95,15 +95,14 @@ char *termname = "st-256color";
  * the st.info and appropriately install the st.info in the environment where
  * you use this st version.
  *
- *	it#$tabspaces,
- *
+ *	it#$tabspacesl *
  * Secondly make sure your kernel is not expanding tabs. When running `stty
  * -a` »tab0« should appear. You can tell the terminal to not expand tabs by
  *  running following command:
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
 float alpha = 0.8;

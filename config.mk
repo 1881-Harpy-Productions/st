@@ -7,12 +7,12 @@ VERSION = 0.8.4
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
-#X11INC = /usr/X11R6/include
-#X11LIB = /usr/X11R6/lib
+X11INC = /usr/X11R6/include
+X11LIB = /usr/X11R6/lib
 
 # freebsd
-X11INC = /usr/local/include
-X11LIB = /usr/local/lib
+#X11INC = /usr/local/include
+#X11LIB = /usr/local/lib
 
 PKG_CONFIG = pkg-config
 
@@ -38,4 +38,4 @@ LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
        `$(PKG_CONFIG) --libs freetype2`
 
 # compiler and linker
-CC = clang12
+CC = clang
