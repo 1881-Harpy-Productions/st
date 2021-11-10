@@ -38,4 +38,5 @@ LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
        `$(PKG_CONFIG) --libs freetype2`
 
 # compiler and linker
-CC = clang
+CC = clang13
+
