@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/ksh";
+static char *shell = "/usr/local/bin/mksh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -110,21 +110,21 @@ float alpha = 0.8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#1c1c1c",
-	"#e02020",
-	"#20e020",
-	"#e0e020",
-	"#5555ff",
-	"#e020e0",
-	"#20e020",
-	"#e0e0e0",
+	"#404040",
+	"#d04040",
+	"#40d040",
+	"#d0d040",
+	"#4040d0",
+	"#d040d0",
+	"#40d040",
+	"#d0d0d0",
 
 	/* 8 bright colors */
-	"#000000",
+	"#202020",
 	"#ff0000",
 	"#00ff00",
 	"#ffff00",
-	"#8888ff",
+	"#0000ff",
 	"#ff00ff",
 	"#00ffff",
 	"#ffffff",
@@ -132,9 +132,9 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#a02020",
-	[257] = "#20a0a0",
-	[258] = "#282828",
+	[256] = "#d04020",
+	[257] = "#20d0d0",
+	[258] = "#202020",
 	[259] = "#e0e0e0",
 	[260] = "#a00000"
 };

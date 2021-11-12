@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/mksh";
+static char *shell = "/usr/local/bin/mksh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -132,9 +132,9 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#a02020",
-	[257] = "#20a0a0",
-	[258] = "#282828",
+	[256] = "#d04020",
+	[257] = "#20d0d0",
+	[258] = "#202020",
 	[259] = "#e0e0e0",
 	[260] = "#a00000"
 };
