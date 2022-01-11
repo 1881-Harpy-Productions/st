@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "jetbrains mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "jetbrains mono:pixelsize=10:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -19,7 +19,7 @@ static int borderpx = 2;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = NULL;
+char *scroll = "scroll";
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -93,6 +93,9 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 4;
 
+/* bg opacity */
+float alpha = 0.75;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -106,7 +109,7 @@ static const char *colorname[] = {
 	"#a0a0a0",
 
 	/* 8 bright colors */
-	"#000000",
+	"#202020",
 	"#f02020",
 	"#20f020",
 	"#f0f020",
@@ -120,8 +123,8 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#dd2020",
 	"#20dddd",
+	"#000000", /* default background colour */
 	"#d0d0d0", /* default foreground colour */
-	"#202020", /* default background colour */
 };
 
 
@@ -129,8 +132,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
