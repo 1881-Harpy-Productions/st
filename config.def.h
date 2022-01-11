@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono:pixelsize=10:antialias=True:autohint=true";
+static char *font = "jetbrains mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/local/bin/mksh";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -34,7 +34,7 @@ static float chscale = 1.0;
  *
  * More advanced example: L" `'\"()[]{}"
  */
-wchar_t *worddelimiters = L" `'\"(){}[]/";
+wchar_t *worddelimiters = L" '\"()[]{}=";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -45,7 +45,7 @@ int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 1;
+int allowwindowops = 0;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -68,22 +68,10 @@ static unsigned int blinktimeout = 800;
 static unsigned int cursorthickness = 2;
 
 /*
- * 1: render most of the lines/blocks characters without using the font for
- *    perfect alignment between cells (U2500 - U259F except dashes/diagonals).
- *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
- * 0: disable (render all U25XX glyphs normally from the font).
- */
-const int boxdraw = 1;
-const int boxdraw_bold = 1;
-
-/* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 1;
-
-/*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
-static int bellvolume = 50;
+static int bellvolume = 0;
 
 /* default TERM value */
 char *termname = "st-256color";
@@ -95,17 +83,15 @@ char *termname = "st-256color";
  * the st.info and appropriately install the st.info in the environment where
  * you use this st version.
  *
- *	it#$tabspacesl *
+ *	it#$tabspaces,
+ *
  * Secondly make sure your kernel is not expanding tabs. When running `stty
  * -a` »tab0« should appear. You can tell the terminal to not expand tabs by
  *  running following command:
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
-
-/* bg opacity */
-float alpha = 0.8;
+unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -116,27 +102,26 @@ static const char *colorname[] = {
 	"#d0d040",
 	"#4040d0",
 	"#d040d0",
-	"#40d040",
-	"#d0d0d0",
+	"#40d0d0",
+	"#a0a0a0",
 
 	/* 8 bright colors */
-	"#202020",
-	"#ff0000",
-	"#00ff00",
-	"#ffff00",
-	"#0000ff",
-	"#ff00ff",
-	"#00ffff",
-	"#ffffff",
+	"#000000",
+	"#f02020",
+	"#20f020",
+	"#f0f020",
+	"#2020f0",
+	"#f020f0",
+	"#20f0f0",
+	"#f0f0f0",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#d04020",
-	[257] = "#20d0d0",
-	[258] = "#202020",
-	[259] = "#e0e0e0",
-	[260] = "#a00000"
+	"#dd2020",
+	"#20dddd",
+	"#d0d0d0", /* default foreground colour */
+	"#202020", /* default background colour */
 };
 
 
@@ -144,18 +129,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-/* previously the variable bellow was static unsigned int. i changed it for a patch, not sure why its needed so i am commenting this just i know what i did if someone goes wrong*/
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 256;
-
-/* Colors used for selection */
-unsigned int selectionbg = 260;
-unsigned int selectionfg = 0;
-/* If 0 use selectionfg as foreground in order to have a uniform foreground-color */
-/* Else if 1 keep original foreground-color of each cell => more colors :) */
-static int ignoreselfg = 1;
+static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
@@ -224,9 +201,6 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_Escape,      keyboard_select,{.i =  0} },
-        { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-        { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*

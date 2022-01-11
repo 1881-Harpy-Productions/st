@@ -1,18 +1,3 @@
-# Patches
-boxdraw
-keyboard select
-anysize
-alpha patch
-selection color
-osc 10 12 12 2
-xclearwin
-bold is not bright
-scroll
-
-
-# Other changes
-git clone https://git.suckless.org/scroll
-
 st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
