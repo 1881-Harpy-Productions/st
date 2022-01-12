@@ -94,29 +94,29 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.5;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"#404040",
-	"#d04040",
-	"#40d040",
-	"#d0d040",
-	"#4040d0",
-	"#d040d0",
-	"#40d0d0",
+	"#a04040",
+	"#40a040",
+	"#a0a040",
+	"#4040a0",
+	"#a040a0",
+	"#40a0a0",
 	"#a0a0a0",
 
 	/* 8 bright colors */
 	"#202020",
-	"#f02020",
-	"#20f020",
-	"#f0f020",
-	"#2020f0",
-	"#f020f0",
-	"#20f0f0",
-	"#f0f0f0",
+	"#ff0000",
+	"#00ff00",
+	"#ffff00",
+	"#0000ff",
+	"#ff00ff",
+	"#00ffff",
+	"#ffffff",
 
 	[255] = 0,
 
